@@ -28,7 +28,7 @@ export default class FaucetJetton implements Contract {
         beginCell()
           .storeUint(INTERNAL_TRANSFER, 32)
           .storeUint(0, 64)
-          .storeCoins(toNano(150))
+          .storeCoins(toNano(1))
           .storeAddress(null)
           .storeAddress(receivingAddress) // So we get a notification
           .storeCoins(toNano("0.001"))
@@ -38,7 +38,7 @@ export default class FaucetJetton implements Contract {
       .endCell();
 
     await provider.internal(via, {
-      value: toNano("0.05"),
+      value: toNano("0.001"),
       body: mintTokensBody,
     });
   }
