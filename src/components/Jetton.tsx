@@ -10,20 +10,20 @@ import {
 } from "./styled/styled";
 
 export function Jetton() {
-  const { connected } = useTonConnect();
+  const { connected, wallet } = useTonConnect();
   const { mint, jettonWalletAddress, balance } = useFaucetJettonContract();
 
   return (
     <Card title="Jetton">
       <FlexBoxCol>
-        <h3>Faucet Jetton</h3>
+        <h3>Cookies labs Jetton</h3>
         <FlexBoxRow>
           Wallet
-          <Ellipsis>{jettonWalletAddress}</Ellipsis>
+          <Ellipsis>{ wallet ? Address.parse(wallet as string).toString() : "Loading..."}</Ellipsis>
         </FlexBoxRow>
         <FlexBoxRow>
-          Balance
-          <div>{balance ?? "Loading..."}</div>
+          FT(jetton) 잔액 : 
+          <div>{jettonWalletAddress ? jettonWalletAddress : "Loading..."}</div>
         </FlexBoxRow>
         <Button
           disabled={!connected}
@@ -31,7 +31,7 @@ export function Jetton() {
             mint();
           }}
         >
-          Get jettons from faucet
+         mint jetton 
         </Button>
       </FlexBoxCol>
     </Card>

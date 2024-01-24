@@ -40,7 +40,7 @@ function App() {
                 ? network === CHAIN.MAINNET
                   ? "mainnet"
                   : "testnet"
-                : "N/A"}
+                : "net switch"}
             </Button>
           </FlexBoxRow>
           <Counter />
