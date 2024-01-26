@@ -31,7 +31,7 @@ export default class FaucetJetton implements Contract {
           .storeCoins(toNano(1))
           .storeAddress(null)
           .storeAddress(receivingAddress) // So we get a notification
-          .storeCoins(toNano("0.01"))
+          .storeCoins(toNano("0.1"))
           .storeBit(false) // forward_payload in this slice, not separate cell
           .endCell()
       )
