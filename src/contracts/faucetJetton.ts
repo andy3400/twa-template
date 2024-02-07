@@ -14,7 +14,9 @@ import {
       provider: ContractProvider,
       via: Sender,
       receivingAddress: Address
-    ) {
+    ) 
+    
+    {
       const MINT = 21;
       const INTERNAL_TRANSFER = 0x178d4519;
       // @ts-ignore

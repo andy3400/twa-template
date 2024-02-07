@@ -3,3 +3,267 @@
   --tg-theme-button-color: #2eaddc;
   --tg-theme-button-text-color: white;
 }
+
+/* COMMON */
+.bounceIn {
+  animation-duration: calc(var(--bounce--animate-duration) * 0.75) !important;
+  animation-name: bounceIn !important;
+}
+
+html, body {
+  box-sizing: border-box;
+  min-height: 100vh;
+  min-height: var(--app-height);
+}
+
+body {
+  font-family: Inter, Helvetica, Arial, sans-serif;
+  font-size: 24px;
+  margin: 0;
+  caret-color: var(--accent-default);
+  background-color: var(--background-page);
+  color: var(--text-secondary);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+* {
+  font-family: Inter, Helvetica, Arial, sans-serif;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-tap-highlight-color: transparent;
+}
+
+body.scroll__disabled {
+  overflow: hidden;
+  position: fixed;
+  left: 0;
+  top: 0 !important;
+  bottom: 0;
+  right: 0;
+}
+
+body.hidden{
+  opacity: 0;
+}
+
+.app__container {
+  min-height: 100vh;
+  min-height: var(--app-height);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.btn {
+  display: inline-flex;
+  background: var(--button--background);
+  width: 100%;
+  border-radius: 40px;
+  color: #fff;
+  font-size: 16px;
+  padding: 12px 24px;
+  box-sizing: border-box;
+  font-weight: 600;
+  line-height: 24px;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.btn:focus {
+  color: #fff;
+}
+
+.btn:hover {
+  background: var(--accent-hover);
+  color: #fff;
+}
+
+.btn.inversed {
+  border: 1px solid var(--button-secondary-stroke);
+  background: transparent;
+  color: var(--text-secondary);
+}
+
+.btn.outline {
+  background: none;
+  padding: 0;
+  width: 100%;
+  color: var(--accent-default);
+}
+
+.btn.outline:hover {
+  color: var(--accent-hover);
+  text-decoration: underline;
+}
+
+.btn.secondary {
+  color: var(--text-tetriary);
+}
+
+.btn.secondary:hover {
+  text-decoration: none;
+  color: var(--text-tetriary);
+}
+
+.btn.no__underline:hover {
+  color: var(--accent-hover);
+  text-decoration: none;
+}
+
+.btn,
+.btn:after,
+.btn:active,
+.btn:focus {
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.btn.inversed:hover, .btn.inversed:after, .btn.inversed:active, .btn.inversed:focus {
+  border: 1px solid var(--button-secondary-stroke);
+  color: var(--text-primary);
+  cursor: pointer;
+}
+
+.btn.inversed:hover {
+  background-color: var(--background-content-hover);
+  cursor: pointer;
+}
+
+.btn:disabled {
+  pointer-events: none;
+  background: var(--disabled--button--background-content);
+  color: var(--text-tetriary);
+  border: none;
+  opacity: 0.56;
+}
+
+.btn:disabled svg, .btn:disabled path {
+  fill: var(--text-tetriary);
+}
+
+.mobile__bid--default__label {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 3px;
+}
+
+.buttonWrapper {
+  padding-top: 24px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.mobile__bid--label {
+  display: flex;
+  gap: 8px;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.icon.bid__modal--icon {
+  width: 18px;
+  display: inline-block;
+}
+
+.icon.copy__link__icon {
+  width: 20px;
+  height: 20px;
+  background-size: contain !important;
+  background: var(--copy__link__icon);
+}
+
+.icon.copy__link--success__icon {
+  width: 20px;
+  height: 20px;
+  background-size: contain !important;
+  background: var(--copy__link__icon--success);
+}
+
+.icon.arrow__right {
+  width: 16px;
+  height: 16px;
+  background: var(--arrow--right);
+  background-size: contain;
+  margin-bottom: -1px;
+}
+
+#copyLinkbutton.copied {
+  color: var(--accent-default);
+}
+
+#copyLinkbutton .copied__label {
+  display: none;
+}
+
+#copyLinkbutton .default__label {
+  display: block;
+}
+
+#copyLinkbutton .copy__link--success__icon {
+  display: none;
+}
+
+#copyLinkbutton.copied .copied__label {
+  display: block;
+}
+
+#copyLinkbutton.copied .default__label {
+  display: none;
+}
+
+#copyLinkbutton.copied .copy__link--success__icon {
+  display:  block;
+}
+
+#copyLinkbutton.copied .copy__link__icon {
+  display:  none;
+}
+
+
+@media screen and (max-width: 568px) {
+  .btn {
+      width: 100%;
+      font-size: 14px;
+  }
+
+  .btn.inversed__mobile:hover, .btn.inversed__mobile:after, .btn.inversed__mobile:active, .btn.inversed__mobile:focus {
+      border: 1px solid var(--button-secondary-stroke);
+      color: var(--text-primary);
+      cursor: pointer;
+  }
+
+  .btn.inversed__mobile:hover {
+      background-color: var(--background-content-hover);
+      cursor: pointer;
+  }
+
+  .btn.inversed__mobile {
+      border: 1px solid var(--button-secondary-stroke);
+      background: transparent;
+      color: var(--text-secondary);
+  }
+
+  .btn.secondary__mobile {
+      color: var(--text-tetriary);
+  }
+
+  .btn.secondary__mobile svg path {
+      stroke: var(--text-tetriary);
+  }
+
+  .btn.secondary__mobile:hover {
+      text-decoration: none;
+      color: var(--text-tetriary);
+  }
+}

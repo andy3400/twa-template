@@ -16,20 +16,19 @@ export function Jetton() {
   return (
     <Card title="Jetton">
       <FlexBoxCol>
-        <h3>Cookies labs Jetton</h3>
+        <h1>GET Cookie Jettons</h1>
         <FlexBoxRow>
-          Wallet
-          <Ellipsis>{ wallet ? Address.parse(wallet as string).toString() : "Loading..."}</Ellipsis>
-        </FlexBoxRow>
-        <FlexBoxRow>
-          FT(jetton) 잔액 : 
-          <div>{jettonWalletAddress ? jettonWalletAddress : "Loading..."}</div>
+          <p>Cookie jetton is Crypto Currency by CookieLabs.</p>
+          <p>This is for special network KOL.</p>
+          <p>you can use in GateKeeper.</p>
         </FlexBoxRow>
         <Button
           disabled={!connected}
           onClick={async () => {
             mint();
           }}
+
+          
         >
          mint jetton 
         </Button>
