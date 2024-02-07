@@ -1,7 +1,7 @@
 import { TonConnectButton } from "@tonconnect/ui-react";  // 자체적인 librery를 통해서 UI 지정.
 import { Jetton } from "./components/Jetton";
 import styled from "styled-components";
-import "./app.css";
+import "./App.css";
 
 import { Button, FlexBoxCol, FlexBoxRow } from "./components/styled/styled";
 import { useTonConnect } from "./hooks/useTonConnect";
